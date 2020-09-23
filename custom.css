@@ -71,3 +71,9 @@
   background-size: cover;
   height: 300px;
 }
+
+@media (max-width:720px) {
+    .truck-hide {
+        display:none;
+    }
+}
