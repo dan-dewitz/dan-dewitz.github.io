@@ -1,0 +1,50 @@
+#logo-text {
+  font-family: 'Underdog', cursive;
+  color: red;
+  font-size: 2.5rem;
+  float: none;
+}
+
+
+.btn-primary:active {
+  color: #fff;
+  /* background-color: #5a6268.2; */
+  background-color: #b6201f;
+  /* border-color: #545b62; #31475c  */
+  border-color: #fff;
+  border-width: medium;
+}
+
+
+.btn-primary:visited {
+  color: #fff;
+  /* background-color: #5a6268; */
+  background-color: #b6201f;
+  /* border-color: #545b62; */
+  border-color: #fff;
+  border-width: medium;
+}
+
+
+.child-container {
+  background-color: blue;
+}
+
+.about-header {
+  background-color: green;
+  height: 50vh;
+}
+
+#about-header2 {
+  background-color: red;
+  height: 50vh;
+}
+
+.about-header h1 {
+  color: yellow !important;
+  /* padding-left: 50px */
+}
+
+.header-section {
+  padding: 0 0
+}
