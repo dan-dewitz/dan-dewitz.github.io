@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Dan DeWitz</title>
+    <title>MyPortfolio Bootstrap Template - Services</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon" />
-    <link href="assets/img/favicon_io/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
     <link
@@ -57,7 +57,7 @@
               <h3 class="text-left">
                 Who Drives <i>The Office</i>? Word Counts Over Seasons
               </h3>
-              <p>Michael talks twice as much as the other characters.</p>
+              <p>Michael talks twice as much as the other characters</p>
               <!-- <h7 class="text-left grey-toggle">click legend to toggle characters<h7> -->
             </div>
           </div>
@@ -67,7 +67,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12 mb-5" data-aos="fade-up" data-aos-delay="">
-                <div class="iframy col-md-12 embed-responsive embed-responsive-21by9">
+                <div class="iframy embed-responsive embed-responsive-21by9 d-none d-md-block d-lg-block d-xl-block">
                   <iframe
                     width="100%"
                     height="100%"
@@ -76,6 +76,9 @@
                     src="https://plot.ly/~ddewitz/22.embed"
                   ></iframe>
                 </div>
+
+              <!-- for mobile -->
+                <img src="assets/img/the office line plot.png" alt="basic word cloud" class="img-fluid pt-3 d-block d-sm-block d-md-none d-lg-none d-xl-none">
               </div>
             </div>
 
@@ -83,9 +86,9 @@
               <div class="col-md-12 mb-5" data-aos="fade-up" data-aos-delay="">
 
                 <h3 class="text-left ">
-                  What are Michaels most frequent words?
+                  What are Michaels most important words?
                 </h3>
-                <p>Michael's 100 most frequently used words are not that interesting, although Ryan and Dwight make the cut.</p>
+                <p>Michael's 100 most frequently used words are not that interesting, although Ryan and Dwight make the cut</p>
                 <img src="assets/img/basic-cloud.png" alt="basic word cloud" class="img-fluid pt-3">
               </div>
 
@@ -95,11 +98,9 @@
                 <h3 class="text-left">
                   Michael's 100 most important words according to TFIDF
                 </h3>
-                <p>The tfidf algorithm ranks words highly that are unique to Michael's vocabulary. Or words that Michael says a lot and the other characters do not.
-                   This algorithm works good when your corpus has a shared vocabulary, like characters in a tv show who all work in the same office.
-                   <br><br>
-                   If you look closely you can see some references to classic episodes,
-                   like rabies, roasted, and dundies. But Michael's girl friends top the list, followed by Ryan.
+                <p>The tfidf algorithm ranks words highly that are unique to Michael's vocabulary. Or words that Michael says a lot and the other characters don't.
+                   This algorithm works good when your corpus has a shared vocabulary, like characters in a tv show. If you look closely you can see some references to classic episodes,
+                   like rabies, roasted, and dundies.
                 </p>
                 <img src="assets/img/tfidf-cloud.png" alt="basic word cloud" class="img-fluid pt-3">
 
@@ -111,8 +112,8 @@
                 <h3 class="text-left">
                   Code
                 </h3>
-                <p>View the Python code on my github<br>
-                <a href="https://github.com/dan-dewitz/the_office_area_plot/blob/master/viz_the_office.py" target="_blank">https://github.com/dan-dewitz/the_office_area_plot<a></p>
+                <p>View the Python code on my github:<br>
+                <a href="https://github.com/dan-dewitz/the_office_area_plot" target="_blank">github.com/dan-dewitz/the_office_area_plot<a></p>
 
               </div>
             </div>
