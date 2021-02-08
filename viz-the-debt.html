@@ -52,37 +52,39 @@
     <main id="main">
       <section class="section">
 
-        <div class="site-section pb-0">
+        <div class="site-section">
           <div class="container">
 
             <div class="row">
-              <div class="col-md-12 mb-5" data-aos="fade-up" data-aos-delay="">
+              <div class="col-md-12" data-aos="fade-up" data-aos-delay="">
 
                 <h3 class="text-left ">
                   Critiquing and Redesigning <i>The Visual Capitalist's</i> Global Debt Trapezoid Chart
                 </h3>
-                <p class="mb-4 ">Although an aesthetically interesting geometric design, it doesn't tell us much about global debt.</p>
+                <p class="pb-4">Although an aesthetically interesting geometric design, it doesn't tell us much about global debt.</p>
+
                 <img src="assets/img/world-debt-2019.png" alt="basic word cloud" class="img-fluid pt-3">
                 <a href="https://www.visualcapitalist.com/69-trillion-of-world-debt-in-one-infographic/" target="_blank">>> link to source<a></p>
               </div>
             </div>
 
-            <div class="row">
+            <div class="row mt-5">
               <div class="col-md-12 mb-5" data-aos="fade-up" data-aos-delay="">
                 <h2 class="text-left">
-                  Critique of the Trapezoid Chart
+                  Critiquing the Trapezoid Chart
                 </h2>
 
-                <h4 class="text-left pt-2">
+                <h4 class="text-left pt-2 text-muted">
                   Pie Charts
                 </h4>
                 <p>Data visualization practitioners typically discourage pie charts because it is difficult to visually compare the volumes of different slices of pie.
                    For example, it can be difficult to discern a slice that accounts for 30% of the pie from a slice comprises 25%.
-                   <br><br>
-                   Secondly, pie charts are only recommended when you have a few categories (or slices) and are trying to convey a simple message,
+                </p>
+                <p>
+                   Pie charts are only recommended when you have a few categories (slices) and are trying to convey a simple message,
                    like Olivia owns 51% of the company's shares.
                 </p>
-                <h4 class="text-left pt-2">
+                <h4 class="text-left pt-2 text-muted">
                   Trapezoid Charts
                 </h4>
                 <!-- <h6 class="mb-2 text-muted">First time spotted in the wild!</h6> -->
@@ -90,34 +92,36 @@
                   and octagons is poor data visualization design.
                   It is difficult to compare the volume of a triangle to a trapezoid to an octagon.
                 </p>
-                <h4 class="text-left pt-2">
-                  Color Scale
+                <h4 class="text-left pt-2 text-muted">
+                  Color
                 </h4>
                 <p>When using a color scale to represent a range of values, it is recommended to choose a single hue. A popular choice is the color red.
                   Light-reds representing low values and darker-reds representing higher values.
-                  <br><br>
-                  In the Visual Capitalist's graphic, I can discern three different colors: yellow, purple, and orange.
-                  To me, yellow does not intrinsically represent a higher value than purple. Therefore, I believe the addition of color to this
-                  graphic only adds to the confusion created by the varying shapes (trapezoids, triangles, and octagons).
                 </p>
-                <h4 class="text-left pt-2">
+                <p>
+                  In the Visual Capitalist's graphic, I can discern three different colors: yellow, purple, and orange.
+                  Yellow does not intrinsically represent a higher value than purple. Therefore, the addition of color to this
+                  graphic only adds to the confusion created by the trapezoids.
+                </p>
+                <h4 class="text-left pt-2 text-muted">
                   The Data Story
                 </h4>
                 <p>I believe the Visual Capitalist's graphic is attempting to tell the following story: 1. there is a lot of debt in the world;
-                  2. the United States holds the most debt; 3. Japan has the highest debt-to-gdp ratio.
-                  <br><br>
-                  1. The graphic does show that there is a lot of debt in the world; however, besides displaying that the US, Japan, and China hold the most
-                  debt-- the additional trapezoids do not provide any more information as they are so hard to visually compare.
-                  <br><br>
-                  2. I am able to discern that the United States holds the most debt, in spite of (not because of) it being represented by an undefined shape.
-                  <br><br>
-                  3. Japan's bright yellow Pac-Man does not intrinsically convey a markedly higher debt-to-gpa ratio than China's purple octagon.
+                   2. the United States holds the most debt; 3. Japan has the highest debt-to-gdp ratio.
                 </p>
+                  <ol>
+                    <li>The graphic shows there is a lot of debt in the world; however, besides displaying that the US, Japan, and China hold the most
+                    debt-- the additional trapezoids do not provide any more information because they are difficult to visually compare.</li>
+                    <li>I am able to discern that the United States holds the most debt, in spite of (not because of) it being represented by an undefined shape.</li>
+                    <li>Japan's bright yellow Pac-Man does not intrinsically convey a markedly higher debt-to-gdp ratio than China's purple octagon.</li>
+                  </ol>
+
+
 
                 <h2 class="text-left pt-4">
                   Redesigning the Trapezoid Chart
                 </h2>
-                <h5 class="mb-4 text-muted">Small Multiples</h5>
+                <h4 class="pb-2 pt-2 text-muted">Small Multiples</h4>
                 <!-- <h4 class="text-left pt-2">
                   Small Multiples
                 </h4> -->
@@ -129,7 +133,7 @@
                     <footer class="blockquote-footer pl-3">Edward R. Tufte in <cite title="Source Title">Envisioning Information</cite></footer>
                   </div>
                 </blockquote>
-                <p class="mt-4">Inspired by Tufte, I use three bar charts to compare the United States' debt, gpd, and debt-gdp-ratio to the top twenty five global economies.</p>
+                <p class="pt-3">Inspired by Tufte, I use three bar charts to compare the United States' debt, gpd, and debt-to-gdp ratio to the top twenty five world economies.</p>
 
 
 
@@ -168,15 +172,15 @@
 
           <div class="row mt-3 text-left">
             <div class="col-md-8 mb-1" data-aos="fade-up" data-aos-delay="">
-              <h4 class="text-left text-muted">
-                The United States' Debt-to-GDP Ratio Is Not An Outlier
-              </h4>
+              <h3 class="text-left">
+                The United States' <b>Debt-to-GDP</b> Ratio Is Not An Outlier
+              </h3>
               <!-- swarm-debt-to-gdp -->
               <img src="assets/img/swarm-debt-to-gdp.png" alt="basic word cloud" class="img-fluid pt-0">
            </div>
            <div class="col-md-4 mb-5 my-auto" data-aos="fade-up" data-aos-delay="">
              <p class="text-left">
-               coming soon: a really interesting narrative explaining how bee swarm plot and box plots work
+               coming soon: a really interesting narrative explaining how bee swarm plots and box plots work
              </p>
           </div>
          </div>
