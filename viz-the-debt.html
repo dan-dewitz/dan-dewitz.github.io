@@ -64,7 +64,7 @@
                 <p class="pb-4">Although an aesthetically interesting geometric design, it doesn't tell us much about global debt.</p>
 
                 <img src="assets/img/world-debt-2019.png" alt="basic word cloud" class="img-fluid pt-3">
-                <a href="https://www.visualcapitalist.com/69-trillion-of-world-debt-in-one-infographic/" target="_blank">>> link to source<a></p>
+                <a style="float:right" href="https://www.visualcapitalist.com/69-trillion-of-world-debt-in-one-infographic/" target="_blank">>> link to source</a></p>
               </div>
             </div>
 
@@ -77,7 +77,7 @@
                 <h4 class="text-left pt-2 text-muted">
                   Pie Charts
                 </h4>
-                <p>Data visualization practitioners typically discourage pie charts because it is difficult to visually compare the volumes of different slices of pie.
+                <p>Data visualization practitioners discourage pie charts because it is difficult to visually compare the volumes of different slices of pie.
                    For example, it can be difficult to discern a slice that accounts for 30% of the pie from a slice comprises 25%.
                 </p>
                 <p>
@@ -113,7 +113,7 @@
                     <li>The graphic shows there is a lot of debt in the world; however, besides displaying that the US, Japan, and China hold the most
                     debt-- the additional trapezoids do not provide any more information because they are difficult to visually compare.</li>
                     <li>I am able to discern that the United States holds the most debt, in spite of (not because of) it being represented by an undefined shape.</li>
-                    <li>Japan's bright yellow Pac-Man does not intrinsically convey a markedly higher debt-to-gdp ratio than China's purple octagon.</li>
+                    <li>Japan's yellow Pac-Man does not intrinsically convey a markedly higher debt-to-gdp ratio than China's purple octagon.</li>
                   </ol>
 
 
@@ -133,7 +133,7 @@
                     <footer class="blockquote-footer pl-3">Edward R. Tufte in <cite title="Source Title">Envisioning Information</cite></footer>
                   </div>
                 </blockquote>
-                <p class="pt-3">Inspired by Tufte, I use three bar charts to compare the United States' debt, gpd, and debt-to-gdp ratio to the top twenty five world economies.</p>
+                <p class="pt-3">Inspired by Tufte, I use three bar charts to compare the United States' debt, gpd, and debt-to-gdp ratio to the top twenty-five world economies.</p>
 
 
 
@@ -148,41 +148,65 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-4 mb-5" data-aos="fade-up" data-aos-delay="">
+              <div class="col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="">
                 <h4 class="text-left text-muted pl-1">
                   The United States Has The Most <b>Debt</b>
                 </h4>
                 <img src="assets/img/world-debt-bar-chart.png" alt="world debt bar chart" class="img-fluid pt-0">
+                <a class="" style="float:right" href="https://www.visualcapitalist.com/69-trillion-of-world-debt-in-one-infographic/" target="_blank" rel="noopener noreferrer">>> data</a>
               </div>
-              <div class="col-md-4 mb-5" data-aos="fade-up" data-aos-delay="">
+              <div class="col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="">
                 <h4 class="text-left text-muted pl-1">
                   The United States Has The Largest <b>GDP</b>
                 </h4>
                 <img src="assets/img/world-gdp-bar-chart.png" alt="basic word cloud" class="img-fluid pt-0">
+                <a class="" style="float:right" href="https://www.worldometers.info/gdp/gdp-by-country/" target="_blank" rel="noopener noreferrer">>> data</a>
               </div>
-              <div class="col-md-4 mb-5" data-aos="fade-up" data-aos-delay="">
+              <div class="col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="">
                 <h4 class="text-left text-muted pl-1">
                   The U.S. Does Not Have The Greatest <b>Debt-to-GDP</b> Ratio
                 </h4>
                 <img src="assets/img/world-debt-to-gdp-bar-chart.png" alt="basic word cloud" class="img-fluid pt-0">
+                <a class="" style="float:right" data-toggle="tooltip" data-placement="bottom" title="data source 1 Debt divided by data source 2 GDP">>> data</a>
               </div>
           </div>
+
+        <!-- <div class="row">
+          <div class="col-md-12">
+            <a href="">>> 219data</a>
+          </div>
+        </div> -->
 
 
 
           <div class="row mt-3 text-left">
-            <div class="col-md-8 mb-1" data-aos="fade-up" data-aos-delay="">
+            <div class="col-lg-8 mb-1" data-aos="fade-up" data-aos-delay="">
               <h3 class="text-left">
                 The United States' <b>Debt-to-GDP</b> Ratio Is Not An Outlier
               </h3>
+              <h4 class="text-muted">
+                Comparing every country's debt-to-gdp using a beeswarm plot
+              </h4>
               <!-- swarm-debt-to-gdp -->
               <img src="assets/img/swarm-debt-to-gdp.png" alt="basic word cloud" class="img-fluid pt-0">
            </div>
-           <div class="col-md-4 mb-5 my-auto" data-aos="fade-up" data-aos-delay="">
-             <p class="text-left">
-               coming soon: a really interesting narrative explaining how bee swarm plots and box plots work
+           <div class="col-lg-4 mb-5 my-auto" data-aos="fade-up" data-aos-delay="">
+             <p class="text-left pt-lg-5">
+               <ul>
+                 <li>every bee (circle) represents a country's debt-to-gdp ratio</li>
+                 <li>the vertical position of a bee represents the magnitude of the ratio; the higher the bee the greater the ratio</li>
+                 <li>the horizontal position represents how many other countries have a similar ratio</li>
+                 <li>the box represents the range from the 25th percentile to the 75th percentile, or the middle 50% of the data; also called the interquartile range (IQR)</li>
+                 <li>the top and bottom whiskers represent the lowest and highest 25% of the data</li>
+                 <li>bees that fall outside the whiskers are outliers--they have a ratio that is greater than 1.5*IQR</li>
+               </ul>
              </p>
           </div>
+         </div>
+         <div class="row">
+           <div class="col-md-12" style="float:right" data-aos="fade-up" data-aos-delay="">
+             <a class="" style="float:right" href="https://worldpopulationreview.com/countries/countries-by-national-debt" target="_blank" rel="noopener noreferrer">>> data</a>
+           </div>
          </div>
 
 
@@ -194,7 +218,7 @@
                 </h3>
                 <p>View the Python code on my github:<br>
                 <!-- <a href="https://github.com/dan-dewitz/the_office_area_plot" target="_blank">github.com/dan-dewitz/the_office_area_plot<a></p> -->
-                <a href="" target="_blank">coming soon<a></p>
+                <a href="#" target="_blank">coming soon<a></p>
 
               </div>
             </div>
@@ -246,5 +270,12 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script type="text/javascript">
+
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
   </body>
 </html>
