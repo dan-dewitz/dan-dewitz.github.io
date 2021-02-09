@@ -61,9 +61,10 @@
                 <h3 class="text-left ">
                   Critiquing and Redesigning <i>The Visual Capitalist's</i> Global Debt Trapezoid Chart
                 </h3>
-                <p class="pb-4">Although an aesthetically interesting geometric design, it doesn't tell us much about global debt.</p>
+                <p>Although an aesthetically interesting geometric design, it doesn't tell us much about global debt.</p>
+                <button type="button" class="btn btn-light"><a href="#redesign">skip to redesign</a></button>
 
-                <img src="assets/img/world-debt-2019.png" alt="basic word cloud" class="img-fluid pt-3">
+                <img src="assets/img/world-debt-2019.png" alt="basic word cloud" class="img-fluid pt-5">
                 <a style="float:right" href="https://www.visualcapitalist.com/69-trillion-of-world-debt-in-one-infographic/" target="_blank">>> link to source</a></p>
               </div>
             </div>
@@ -116,15 +117,15 @@
                     <li>Japan's yellow Pac-Man does not intrinsically convey a markedly higher debt-to-gdp ratio than China's purple octagon.</li>
                   </ol>
 
+              </div>
+            </div>
 
-
-                <h2 class="text-left pt-4">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="text-left pt-4" id="redesign">
                   Redesigning the Trapezoid Chart
                 </h2>
                 <h4 class="pb-2 pt-2 text-muted">Small Multiples</h4>
-                <!-- <h4 class="text-left pt-2">
-                  Small Multiples
-                </h4> -->
                 <blockquote class="blockquote text-left">
                   <div class="border-left" style="border-width: 3px !important;">
                     <p class="mb-0 pl-3">At the heart of quantitative reasoning is a single question: <i>Compared to what?</i>
@@ -133,14 +134,10 @@
                     <footer class="blockquote-footer pl-3">Edward R. Tufte in <cite title="Source Title">Envisioning Information</cite></footer>
                   </div>
                 </blockquote>
-                <p class="pt-3">Inspired by Tufte, I use three bar charts to compare the United States' debt, gpd, and debt-to-gdp ratio to the top twenty-five world economies.</p>
-
-
-
+                <p class="pt-2">Inspired by Tufte, I use three bar charts to compare the United States' debt, gpd, and debt-to-gdp ratio to the top twenty-five world economies.</p>
               </div>
             </div>
-
-            <div class="row mt-1 mb-3">
+            <div class="row mt-4 mb-3">
               <div class="col-md-12">
                 <h3 class="text-left pl-1">
                   Comparing the United States' Fiscal Position to the Top 25 World Economies
@@ -167,17 +164,9 @@
                   The U.S. Does Not Have The Greatest <b>Debt-to-GDP</b> Ratio
                 </h4>
                 <img src="assets/img/world-debt-to-gdp-bar-chart.png" alt="basic word cloud" class="img-fluid pt-0">
-                <a class="" style="float:right" data-toggle="tooltip" data-placement="bottom" title="data source 1 Debt divided by data source 2 GDP">>> data</a>
+                <a class="" style="float:right" data-toggle="tooltip" data-placement="bottom" title="Debt Data Source (divided by) GDP Data Source">>> data</a>
               </div>
           </div>
-
-        <!-- <div class="row">
-          <div class="col-md-12">
-            <a href="">>> 219data</a>
-          </div>
-        </div> -->
-
-
 
           <div class="row mt-3 text-left">
             <div class="col-lg-8 mb-1" data-aos="fade-up" data-aos-delay="">
@@ -196,8 +185,8 @@
                  <li>every bee (circle) represents a country's debt-to-gdp ratio</li>
                  <li>the vertical position of a bee represents the magnitude of the ratio; the higher the bee the greater the ratio</li>
                  <li>the horizontal position represents how many other countries have a similar ratio</li>
-                 <li>the box represents the range from the 25th percentile to the 75th percentile, or the middle 50% of the data; also called the interquartile range (IQR)</li>
-                 <li>the top and bottom whiskers represent the lowest and highest 25% of the data</li>
+                 <li>the box represents a range of values25th percentile to the 75th percentile, or the middle 50% of the data; also called the interquartile range (IQR)</li>
+                 <li>the top and bottom whiskers represent the highest and lowest 25% of the data</li>
                  <li>bees that fall outside the whiskers are outliers--they have a ratio that is greater than 1.5*IQR</li>
                </ul>
              </p>
@@ -216,10 +205,9 @@
                 <h3 class="text-left">
                   Code
                 </h3>
-                <p>View the Python code on my github:<br>
-                <!-- <a href="https://github.com/dan-dewitz/the_office_area_plot" target="_blank">github.com/dan-dewitz/the_office_area_plot<a></p> -->
-                <a href="#" target="_blank">coming soon<a></p>
-
+                <p class="pb-0">View the Python code and data on my github: <br>
+                <a class="pt-0" href="https://github.com/dan-dewitz/visualizing-world-debt/blob/main/main.py" target="_blank">github.com/dan-dewitz/visualizing-world-debt/<a>
+                </p>
               </div>
             </div>
 
