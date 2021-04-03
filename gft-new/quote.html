@@ -42,14 +42,14 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/custom.css" rel="stylesheet" />
   </head>
-  <body id="page-top">
+  <body id="page-top getaquote">
     <!-- Navigation-->
     <nav
       class="navbar navbar-expand-lg navbar-light fixed-top"
       id="mainNav"
       style="background-color: #b6201f"
     >
-      <div class="container">
+      <div class="container" id="getaquote">
         <!-- <div class="d-lg-none"> -->
         <a
           class="navbar-brand js-scroll-trigger"
@@ -60,7 +60,7 @@
         >
 
         <button
-          class="navbar-toggler navbar-toggler-right"
+          class="navbar-toggler navbar-toggler-right collapsed custom-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarResponsive"
@@ -68,8 +68,11 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
+          <span class="my-1 mx-2 close" style="color: rgba(255, 255, 255, 0.9)"
+            >X</span
+          >
           <i
-            class="fas fa-bars fa-3x"
+            class="fas fa-bars fa-3x sandwich"
             style="color: rgba(255, 255, 255, 0.8)"
           ></i>
         </button>
@@ -78,17 +81,20 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto" id="">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#ourstory"
+              <a class="nav-link js-scroll-trigger" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="./about.html"
                 >Our Story</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#getaquote"
+              <a class="nav-link js-scroll-trigger" href="./quote.html"
                 >Get A Quote</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#truckWithUs"
+              <a class="nav-link js-scroll-trigger" href="./jobs.html"
                 >Truck With Us</a
               >
             </li>
@@ -111,7 +117,7 @@
             </div>
         </header>
         -->
-    <div class="jumbotron">
+    <div class="jumbotron" id="getaquote">
       <div class="container special text-left">
         <!-- <h1 class="display-3 text-uppercase" style="margin-top: 40%">Get A Quote</h1> -->
         <h1 class="text-uppercase" style="margin-top: 90px">Get A Quote</h1>
@@ -161,6 +167,26 @@
               id="inputEmail4"
               placeholder="Email"
             />
+          </div>
+        </div>
+        <div>
+          <h4 class="blue-text mt-3">Load Type</h4>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="exampleFormControlSelect1">Distance</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>OTR</option>
+              <option>Regional</option>
+              <option>Local</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="exampleFormControlSelect1">Trailer</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Hopper</option>
+              <option>Dry Van</option>
+            </select>
           </div>
         </div>
         <div>
@@ -255,8 +281,8 @@
             -->
         <button
           type="submit"
-          class="btn btn-primary mb-5 mt-2"
-          style="color: #31475c; width: 100%"
+          class="btn btn-outline-danger mb-5 mt-2"
+          style="width: 100%; font-size: 1.3rem"
         >
           Submit
         </button>
@@ -336,17 +362,16 @@
                 <!-- <div class="social d-flex justify-content-center mt-0"> -->
                 <!-- <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a> -->
                 <!-- <p>Follow Us on facebook</p> -->
-                <a class="mx-2" href="#!"
-                  ><i class="fab fa-facebook fa-3x text-primary"></i
+                <a class="" href="#!"
+                  ><i class="fab fa-facebook-f fa-1x text-primary mb-2"></i
                 ></a>
+                <h4 class="text-uppercase m-0">Facebook</h4>
                 <!-- <a class="mx-2" href="#!"><i class="fab fa-github"></i></a> -->
                 <!-- </div> -->
                 <!-- <h4 class="text-uppercase m-0">Phone</h4> -->
                 <hr class="my-4" />
                 <div class="text-black-50">
-                  <a href="#" style="color: rgba(0, 0, 0, 0.5)"
-                    >Follow us on Facebook!</a
-                  >
+                  <a href="#" style="color: rgba(0, 0, 0, 0.5)">Follow us!</a>
                 </div>
               </div>
             </div>
@@ -369,8 +394,8 @@
     <footer class="footer bg-black small text-white-50">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 text-left">Designed by Dan DeWitz</div>
-          <div class="col-md-6 text-right">
+          <!-- <div class="col-md-6 text-left">Designed by Dan DeWitz</div> -->
+          <div class="col-md-12 text-center">
             Copyright © groverfarmtrucking.com
           </div>
         </div>
