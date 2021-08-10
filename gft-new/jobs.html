@@ -35,6 +35,17 @@
     />
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/custom.css" rel="stylesheet" />
+    <style>
+      .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+        color: #b6201f;
+        background-color: #fff;
+        border-color: #dee2e6 #dee2e6 #fff;
+      }
+
+      a {
+        color: #31475c;
+      }
+    </style>
   </head>
   <body id="page-top">
     <!-- Navigation-->
@@ -110,11 +121,23 @@
     </div>
 
     <div class="container" style="background: #fff">
-      <div class="page-header mt-5">
+      <div class="page-header mt-5 mb-5">
         <h1 class="blue-text">Job openings</h1>
         <p>We are always excited to hear from talented drivers.</p>
       </div>
-      <h3 class="blue-text">Trucking Details</h3>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a href="#home" class="nav-link" data-toggle="tab">Regional Driver</a>
+    </li>
+    <li class="nav-item">
+        <a href="#profile" class="nav-link active" data-toggle="tab">Owner/Operator</a>
+    </li>
+
+</ul>
+<div class="tab-content">
+    <div class="tab-pane fade" id="home">
+      <h3 class="blue-text mt-4">Regional Driver Details</h3>
       <p>
         The trucks are based out of Amboy, MN and the truck must return to the
         yard every weekend. The truck can be based out of somewhere else within
@@ -183,9 +206,7 @@
         <li>Complete all paperwork on time</li>
         <li>Pass a pre-employment drug screening</li>
       </ul>
-    </div>
 
-    <div class="container">
       <h3 class="blue-text">Driver Application</h3>
       <form>
         <div class="form-row">
@@ -257,6 +278,116 @@
           Submit
         </button>
       </form>
+    </div>
+    <div class="tab-pane fade show active" id="profile">
+      <h3 class="blue-text mt-4">Owner/Operator Details</h3>
+      <p>
+        Grover Farm is looking to continue to expand out fleet to meet new customer contracts. Started in 1982, we are a multi-generation family-run trucking company out of Amboy, MN. Our primary industries are feed ingredients and seed products throughout the surrounding 5 states around Minnesota. We operate hopper bottom and dry vans.
+      </p>
+
+      <h3 class="blue-text">Perks</h3>
+      <ul>
+        <li>We provide authority for those that need it, as well as work with O/O that already have their own authority.</li>
+        <li>Year-round, steady, good paying work.</li>
+        <li>80% customer direct freight, limited brokers</li>
+        <li>Weekly settlements 3 weeks after work is complete</li>
+        <li>Rate transparency, we show rate confirmations and provide detailed list of rates and loads each week</li>
+        <li>Most loads have a fuel surcharge, fuel surcharge and stop fees go 100% to the truck.</li>
+        <li>E-log provided for trucks that require it</li>
+        <li>We allow older equipment with a company inspection</li>
+        <li>Dispatched by the owners who drive themselves still- if we won't haul it, then you won't haul it.</li>
+      </ul>
+
+      <h3 class="blue-text">Schedule</h3>
+      <p>
+        Winter is our busiest time of the year- getting seed products out the door.  The summer is our slowest time of the year with most people taking vacations with their families. Some weeks will be home daily and other weeks will be gone Monday-Friday. We do not do resets on the road, home every weekend with occasional weekend work for extra income.
+      </p>
+
+      <h3 class="blue-text">Compensation</h3>
+      <ul>
+        <li>90% of a gross with your own trailer</li>
+        <li>8% trailer rent</li>
+        <li>2% if running our plates and our authority</li>
+        <li>Average of $225,000 a year to the truck at 80%, some make less but are home more, up to the O/O</li>
+      </ul>
+
+
+      <h3 class="blue-text">Driver Application</h3>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputPassword4">Name</label>
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword4"
+              placeholder="Name"
+            />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPassword4">Phone</label>
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword4"
+              placeholder="Phone"
+            />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail4"
+              placeholder="Email"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Note of interest</label>
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            placeholder="Tell us why you are a good fit for this job..."
+          ></textarea>
+        </div>
+
+        <label for="inputGroupFileAddon01">Resume</label>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupFileAddon01"
+              >Upload</span
+            >
+          </div>
+          <div class="custom-file">
+            <input
+              type="file"
+              class="custom-file-input"
+              id="inputGroupFile01"
+              aria-describedby="inputGroupFileAddon01"
+            />
+            <label class="custom-file-label" for="inputGroupFile01"
+              >Choose file</label
+            >
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-outline-danger mb-5 mt-2"
+          style="width: 100%; font-size: 1.3rem"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+</div>
+
+
+<!-- end of main content section -->
     </div>
 
     <!-- Contact-->
