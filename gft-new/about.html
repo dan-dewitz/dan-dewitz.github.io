@@ -41,6 +41,261 @@
     />
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/custom.css" rel="stylesheet" />
+    <style>
+body{
+    /* background-color: #f7f7f7; */
+    margin-top:20px;
+}
+
+.main-timeline {
+    position: relative
+}
+
+.main-timeline:before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 100%;
+    background: #c6c6c6;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0
+}
+
+.main-timeline .timeline {
+    margin-bottom: 40px;
+    position: relative
+}
+
+.main-timeline .timeline:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.main-timeline .icon {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0
+}
+
+.main-timeline .icon:before,
+.main-timeline .icon:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.33s ease-out 0s
+}
+
+.main-timeline .icon:before {
+    background: #fff;
+    border: 2px solid #232323;
+    left: -3px
+}
+
+.main-timeline .icon:after {
+    border: 2px solid #c6c6c6;
+    left: 3px
+}
+
+.main-timeline .timeline:hover .icon:before {
+    left: 3px
+}
+
+.main-timeline .timeline:hover .icon:after {
+    left: -3px
+}
+
+.main-timeline .date-content {
+    width: 50%;
+    float: left;
+    margin-top: 22px;
+    position: relative
+}
+
+.main-timeline .date-content:before {
+    content: "";
+    width: 36.5%;
+    height: 2px;
+    background: #c6c6c6;
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0
+}
+
+.main-timeline .date-outer {
+    width: 125px;
+    height: 125px;
+    font-size: 16px;
+    text-align: center;
+    margin: auto;
+    z-index: 1
+}
+
+.main-timeline .date-outer:before,
+.main-timeline .date-outer:after {
+    content: "";
+    width: 125px;
+    height: 125px;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.33s ease-out 0s
+}
+
+.main-timeline .date-outer:before {
+    background: #fff;
+    border: 2px solid #232323;
+    left: -6px
+}
+
+.main-timeline .date-outer:after {
+    border: 2px solid #c6c6c6;
+    left: 6px
+}
+
+.main-timeline .timeline:hover .date-outer:before {
+    left: 6px
+}
+
+.main-timeline .timeline:hover .date-outer:after {
+    left: -6px
+}
+
+.main-timeline .date {
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 27%;
+    left: 0
+}
+
+.main-timeline .month {
+    font-size: 18px;
+    font-weight: 700
+}
+
+.main-timeline .year {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    color: #31475c;
+    line-height: 55px
+}
+
+.main-timeline .timeline-content {
+    width: 50%;
+    padding: 20px 0 20px 50px;
+    float: right
+}
+
+.main-timeline .title {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0 0 15px 0
+}
+
+.main-timeline .description {
+    margin-bottom: 0
+}
+
+.main-timeline .timeline:nth-child(2n) .date-content {
+    float: right
+}
+
+.main-timeline .timeline:nth-child(2n) .date-content:before {
+    left: 10px
+}
+
+.main-timeline .timeline:nth-child(2n) .timeline-content {
+    padding: 20px 50px 20px 0;
+    text-align: right
+}
+
+@media only screen and (max-width: 991px) {
+    .main-timeline .date-content {
+        margin-top: 35px
+    }
+    .main-timeline .date-content:before {
+        width: 22.5%
+    }
+    .main-timeline .timeline-content {
+        padding: 10px 0 10px 30px
+    }
+    .main-timeline .title {
+        font-size: 17px
+    }
+    .main-timeline .timeline:nth-child(2n) .timeline-content {
+        padding: 10px 30px 10px 0
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .main-timeline:before {
+        margin: 0;
+        left: 7px
+    }
+    .main-timeline .timeline {
+        margin-bottom: 20px
+    }
+    .main-timeline .timeline:last-child {
+        margin-bottom: 0
+    }
+    .main-timeline .icon {
+        margin: auto 0
+    }
+    .main-timeline .date-content {
+        width: 95%;
+        float: right;
+        margin-top: 0
+    }
+    .main-timeline .date-content:before {
+        display: none
+    }
+    .main-timeline .date-outer {
+        width: 110px;
+        height: 110px
+    }
+    .main-timeline .date-outer:before,
+    .main-timeline .date-outer:after {
+        width: 110px;
+        height: 110px
+    }
+    .main-timeline .date {
+        top: 30%
+    }
+    .main-timeline .year {
+        font-size: 24px
+    }
+    .main-timeline .timeline-content,
+    .main-timeline .timeline:nth-child(2n) .timeline-content {
+        width: 95%;
+        text-align: center;
+        padding: 10px 0
+    }
+    .main-timeline .title {
+        margin-bottom: 10px
+    }
+}
+    </style>
   </head>
   <body id="page-top ">
     <!-- Navigation-->
@@ -85,7 +340,7 @@
               <a class="nav-link js-scroll-trigger" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="./about.html"
+              <a class="nav-link js-scroll-trigger" href="#ourstory"
                 >Our Story</a
               >
             </li>
@@ -131,39 +386,75 @@
 
       <div class="page-header ">
         <h2 class="mb-5" style="color: #31475c">We are a multi-generational family-owned company based out of Amboy, Minnesota.</h2>
-      </div>
-
-      <div class="row ">
-        <div class="col-md-4 ">
-
-          <div class="card" style="width: 18rem; border: none;">
-            <img class="card-img-top" src="https://picsum.photos/200/200" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text"><b>Don Grover</b> began operating our first truck, a sweet corn dump truck, in 1982 and slowly added to our fleet.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-
-          <div class="card" style="width: 18rem; border: none;">
-            <img class="card-img-top" src="https://picsum.photos/200/200" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">His son, <b>Rob Grover</b>, joined the company in 2010 as a driver, and after completing his deployment with the Army National Guard he took over dispatching from his father.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-
-          <div class="card" style="width: 18rem; border: none;">
-            <img class="card-img-top" src="https://picsum.photos/200/200" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">In 2021, Rob's wife <b>Kate</b> joined the company full-time, primarily working with billing, collecting, and record-keeping.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
     </div>
 
+
+<div class="container">
+<div class="main-timeline">
+
+                        <!-- start experience section-->
+                        <div class="timeline">
+                            <div class="icon"></div>
+                            <div class="date-content">
+                                <div class="date-outer">
+                                    <span class="date">
+                                            <!-- <span class="month">1 Year</span> -->
+                                    <span class="year">1982</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="timeline-content">
+                                <h5 class="title" style="color: #31475c">Don Grover</h5>
+                                <p class="description">
+                                    Don began operating our first truck, a sweet corn dump truck, in 1982 and slowly added to our fleet.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end experience section-->
+
+                        <!-- start experience section-->
+                        <div class="timeline">
+                            <div class="icon"></div>
+                            <div class="date-content">
+                                <div class="date-outer">
+                                    <span class="date">
+                                            <!-- <span class="month">26 Years</span> -->
+                                    <span class="year">2010</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="timeline-content">
+                                <h5 class="title" style="color: #31475c">Rob Grover</h5>
+                                <p class="description">
+                                    Don's son Rob joined the company in 2010 as a driver, and after completing his deployment with the Army National Guard he took over dispatching from his father.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end experience section-->
+
+                        <!-- start experience section-->
+                        <div class="timeline">
+                            <div class="icon"></div>
+                            <div class="date-content">
+                                <div class="date-outer">
+                                    <span class="date">
+                                            <!-- <span class="month">37 Years</span> -->
+                                    <span class="year">2021</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="timeline-content">
+                                <h5 class="title" style="color: #31475c">Kate Grover</h5>
+                                <p class="description">
+In 2021, Rob's wife Kate joined the company full-time, primarily working with billing, collecting, and record-keeping.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end experience section-->
+
+                    </div>
+</div>
 
       <div class="container-fluid" style="background-color: #ececec;">
         <div class="container">
@@ -173,21 +464,22 @@
       </div>
 
 
-
+      <div class="container-fluid">
             <div class="container">
 
                 <!-- Featured Project Row-->
                 <div class="row align-items-center no-gutters" id="ourstory" style="margin-bottom: 4rem">
                     <div class="col-xl-7 col-lg-7">
-                        <div class="text-center text-lg-left">
+                        <div class="text-lg-left">
                             <h4 class="font-weight-bold" style="color: #31475c">30 trucks hauling out of the upper-midwest</h4>
                             <h5 class=" mb-3" style="color: #31475c">We currently operate about 30 trucks, with a mix of hopper and dry-vans, and primarily haul seed and feed ingredients in the upper-midwest (Minnesota, Iowa, Wisconsin, South Dakota, and North Dakota).</h5>
                         </div>
                     </div>
-                    <div class="text-center col-xl-5 col-lg-5 "><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5888994.184011911!2d-98.64093618108241!3d43.88721171582165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f46e0ccd14c263%3A0xa903198162c06e99!2sAmboy%2C%20MN%2056010!5e0!3m2!1sen!2sus!4v1626639232655!5m2!1sen!2sus" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+                    <div class="text-center col-xl-5 col-lg-5 "><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5888994.184011911!2d-98.64093618108241!3d43.88721171582165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f46e0ccd14c263%3A0xa903198162c06e99!2sAmboy%2C%20MN%2056010!5e0!3m2!1sen!2sus!4v1626639232655!5m2!1sen!2sus" width="250" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
 
                 </div>
             </div>
+</div>
 
       <div class="container-fluid" style="background-color: #ececec;">
         <div class="container">
@@ -197,14 +489,17 @@
         </div>
       </div>
 
+<div class="container-fluid">
         <div class="container">
 
           <h4 class="font-weight-bold mt-4 pt-4" style="color: #31475c">Organic and specialty loads</h4>
           <h5 class="pb-5 mb-0" style="color: #31475c">We have experience hauling organic products, as well as other specialty loads such as driver-assist, pallet-jacks, and multi-stop loads. We have specialized high-capacity hoppers to deliver low-density products, and battery-powered pallet jacks to assist with farm deliveries.</h5>
         </div>
+</div>
+
 
     <!-- Contact-->
-    <section class="contact-section bg-black" id="contact">
+    <section class="contact-section bg-black" id="">
       <div class="container">
         <div class="row text-center mb-4 text-white">
           <div class="col-md-12">
@@ -212,18 +507,19 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
+          <div class="col-xl-3 col-lg-6 mb-3 ">
+            <div class="card py-4 h-100 w-lg-50">
               <div class="card-body text-center">
                 <i class="fas fa-map-marked-alt text-primary mb-2"></i>
                 <h4 class="text-uppercase m-0">Address</h4>
                 <hr class="my-4" />
-                <div class="text-black-50">2050 Main Street</div>
+                <div class="text-black-50">P.O. Box 369</div>
+                <div class="text-black-50">11661 529th Avenue</div>
                 <div class="text-black-50">Amboy, MN 56010</div>
               </div>
             </div>
           </div>
-          <div class="col-md-3 mb-3 mb-md-0">
+          <div class="col-xl-3 col-lg-6 mb-3 ">
             <div class="card py-4 h-100">
               <div class="card-body text-center">
                 <i class="fas fa-envelope text-primary mb-2"></i>
@@ -231,13 +527,13 @@
                 <hr class="my-4" />
                 <div class="text-black-50">
                   <a style="color: rgba(0, 0, 0, 0.5)" href="#!"
-                    >hello@gft.com</a
+                    >rob@groverfarms.com</a
                   >
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-3 mb-3 mb-md-0">
+          <div class="col-xl-3 col-lg-6 mb-3 ">
             <div class="card py-4 h-100">
               <div class="card-body text-center">
                 <i class="fas fa-mobile-alt text-primary mb-2"></i>
@@ -247,7 +543,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 mb-3 mb-md-0">
+          <div class="col-xl-3 col-lg-6 mb-3 ">
             <div class="card py-4 h-100">
               <div class="card-body text-center">
                 <!-- <div class="social d-flex justify-content-center mt-0"> -->
