@@ -194,9 +194,21 @@
                                     <!-- <a class="text-gradient" href="#!"><i class="bi bi-twitter"></i></a> -->
                                     <a class="" style="color: #7f5747;" href="https://www.linkedin.com/in/dan-dewitz-7b819757/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
                                     <a class="" style="color: #7f5747;" href="#!"><i class="bi bi-github" target="_blank" rel="noopener noreferrer"></i></a>
+                                    <!-- <a class="" style="color: #7f5747;" href="#"><i class="bi bi-envelope"></i></a> -->
+                                    <a 
+                                        class="" 
+                                        style="color: #7f5747;" 
+                                        href="javascript:void(0);" 
+                                        data-bs-toggle="popover" 
+                                        data-bs-placement="top" 
+                                        data-bs-content="dewitz.dan@gmail.com" 
+                                        title="Email Me!"
+                                    >
+                                        <i class="bi bi-envelope"></i>
+                                    </a>  
+                                  
+                                  
                                 </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -221,6 +233,15 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <script>
+            const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+            const popoverList = [...popoverTriggerList].map(el => new bootstrap.Popover(el));
+          </script> 
+
+        <!-- Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     </body>
 </html>
 
