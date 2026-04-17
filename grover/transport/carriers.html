@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carriers | Grover Transport LLC</title>
+  <meta name="description" content="Join the Grover Transport carrier network. Dependable bulk freight opportunities for carriers who value communication and long-term relationships." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body style="--hero-image:url('assets/night_belt.jpg')">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Grover Transport logo" class="brand-logo" />
+      </a>
+      <nav class="nav-links">
+        <a href="shippers.html">Shippers</a>
+        <a class="active" href="carriers.html">Carriers</a>
+        <a href="login.html" class="btn btn-outline">Partner Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-shade"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">For Carriers</div>
+        <h1>Join a carrier network built on communication and long-term relationships.</h1>
+        <p>
+          Grover Transport works with dependable bulk carriers who value professionalism, clear communication,
+          and consistent execution. We are interested in building real working relationships, not just filling
+          capacity on a one-off basis.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#carrier-form">Join Carrier Network</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <div class="section-tag">Carrier Opportunities</div>
+        <h2>Bulk freight work for carriers who show up right.</h2>
+        <p>
+          We are always interested in building relationships with dependable carriers who value communication,
+          service, and professionalism. If your equipment and operation are a fit for bulk freight
+          opportunities, we would like to hear from you.
+        </p>
+        <p>
+          Our freight mix includes bulk liquid, dry bulk, and general freight across the Upper Midwest.
+          We work with carriers who understand the specialized nature of this work and take it seriously.
+        </p>
+        <div class="check-list">
+          <div>Opportunities for quality carrier partners</div>
+          <div>Clear communication and realistic expectations on every load</div>
+          <div>Relationship-driven approach — we learn your operation</div>
+          <div>Bulk freight understanding rooted in real operations</div>
+        </div>
+      </div>
+      <div class="image-card">
+        <img src="assets/rob_trucks.jpg" alt="Grover Transport trucks" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container split-section reverse">
+      <div class="image-card">
+        <img src="assets/belt_load.jpg" alt="Belt trailer loading operation" />
+      </div>
+      <div class="content-panel">
+        <div class="section-tag">Equipment Types</div>
+        <h2>We work with carriers running specialized bulk equipment.</h2>
+        <p>
+          Our freight needs vary by season and customer. We regularly work with carriers running
+          the following equipment types:
+        </p>
+        <ul class="feature-list">
+          <li>Food-grade and feed-grade tanker trailers</li>
+          <li>Belt trailers for bulk commodity unloading</li>
+          <li>Hopper trailers for dry bulk freight</li>
+          <li>Dry van trailers for general freight</li>
+          <li>Flatbed and specialty equipment on a case-by-case basis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-section">
+      <div class="content-panel">
+        <div class="section-tag">Southern Minnesota</div>
+        <h2>Based in Amboy, Minnesota.</h2>
+        <p>
+          Grover Transport LLC operates out of Amboy, Minnesota alongside Grover Farm Trucking LLC.
+          Our focus is the Upper Midwest, and we understand the freight, the facilities, and the
+          seasonal realities of this region.
+        </p>
+        <ul class="feature-list">
+          <li>Agricultural and industrial bulk freight expertise</li>
+          <li>Upper Midwest lane knowledge</li>
+          <li>Accessible team — call and reach a real person</li>
+          <li>Direct line to Grover Farm Trucking LLC asset capacity when available</li>
+        </ul>
+      </div>
+      <div class="image-card">
+        <img src="assets/tanker_side.jpg" alt="Grover Transport tanker trailer" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="carrier-form">
+    <div class="container form-layout">
+      <div>
+        <div class="section-tag">Join the Network</div>
+        <h2>Tell us about your company and equipment.</h2>
+        <p>
+          Reach out with your carrier details and we will be in touch to discuss opportunities
+          and fit with our freight network.
+        </p>
+        <div class="check-list" style="margin-top:28px">
+          <div>MC/DOT number required</div>
+          <div>Bulk equipment preferred</div>
+          <div>Upper Midwest lanes prioritized</div>
+        </div>
+      </div>
+      <!-- Replace YOUR_CARRIER_FORM_ID with your Formspree form ID — see SETUP.md -->
+      <form class="site-form" action="https://formspree.io/f/YOUR_CARRIER_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="Carrier Network Inquiry — Grover Transport">
+        <label>Company Name<input type="text" name="company" required placeholder="Carrier company name" /></label>
+        <label>Contact Name<input type="text" name="contact" required placeholder="Primary contact" /></label>
+        <label>Email Address<input type="email" name="email" required placeholder="name@company.com" /></label>
+        <label>Phone Number<input type="tel" name="phone" placeholder="Best contact number" /></label>
+        <label>MC / DOT Number<input type="text" name="mc" placeholder="MC or DOT number" /></label>
+        <label>Equipment Type<input type="text" name="equipment" placeholder="Tank, belt, hopper, van, etc." /></label>
+        <label>Operating Area / Notes<textarea rows="6" name="notes" required placeholder="Tell us where you run, what equipment you have, and anything else we should know"></textarea></label>
+        <button type="submit" class="btn btn-primary">Join Carrier Network</button>
+        <p class="form-note">Your submission goes directly to the Grover Transport team.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container cta-box">
+      <div>
+        <div class="section-tag light">Get in Touch</div>
+        <h2>Questions before filling out the form?</h2>
+        <p>Email: <a href="mailto:rob@groverfarm.com">rob@groverfarm.com</a> &nbsp;|&nbsp; Phone: <a href="tel:5077208120">507-720-8120</a></p>
+      </div>
+      <a class="btn btn-primary light-btn" href="#carrier-form">Join Carrier Network</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <img src="assets/logo.png" alt="Grover Transport logo" class="footer-logo" />
+        <p style="margin-top:10px;font-size:.88rem;color:rgba(255,255,255,.55)">Extension of Grover Farm Trucking LLC &nbsp;·&nbsp; Amboy, Minnesota</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+        <nav style="display:flex;gap:20px;font-size:.9rem;color:rgba(255,255,255,.7);font-weight:600">
+          <a href="shippers.html">Shippers</a>
+          <a href="carriers.html">Carriers</a>
+          <a href="login.html">Partner Login</a>
+        </nav>
+        <a href="../index.html" style="color:rgba(255,255,255,.4);font-size:.84rem;">← Grover Companies</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

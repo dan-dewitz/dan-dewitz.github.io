@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grover Transport LLC</title>
+  <meta name="description" content="Grover Transport LLC — bulk freight brokerage. Shippers, carrier partners, and onboarded partner access.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    :root{
+      --shadow:0 24px 70px rgba(0,0,0,.38);
+      --line:rgba(255,255,255,.12);
+    }
+    html,body{margin:0;min-height:100%;font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at top,#101722 0%,#07090d 60%,#050608 100%);color:#fff}
+    body{padding:22px}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+
+    .page-shell{
+      min-height:calc(100vh - 44px);
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:rgba(255,255,255,.03);
+      backdrop-filter:blur(10px);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .top-bar{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:16px 22px;border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+    }
+    .top-logo{height:44px;width:auto;filter:drop-shadow(0 4px 10px rgba(0,0,0,.3))}
+    .top-back{
+      color:rgba(255,255,255,.55);font-size:.84rem;font-weight:600;
+      transition:color .2s;
+    }
+    .top-back:hover{color:rgba(255,255,255,.9)}
+
+    /* ── 3-column grid ── */
+    .landing-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      min-height:calc(100vh - 109px);
+    }
+    .panel{
+      position:relative;overflow:hidden;text-decoration:none;color:inherit;isolation:isolate;
+      border-right:1px solid var(--line);
+    }
+    .panel:last-child{border-right:none}
+    .bg{
+      position:absolute;inset:-3%;background-size:cover;background-position:center;
+      transform:scale(1.04);transition:transform .9s ease,filter .9s ease;
+    }
+    .shade{position:absolute;inset:0}
+
+    .shippers .shade{
+      background:
+        linear-gradient(180deg,rgba(6,8,11,.15) 0%,rgba(6,8,11,.52) 50%,rgba(6,8,11,.88) 100%),
+        linear-gradient(135deg,rgba(211,19,25,.42) 0%,rgba(10,10,12,.38) 40%,rgba(10,10,12,.82) 100%);
+    }
+    .carriers .shade{
+      background:
+        linear-gradient(180deg,rgba(6,8,11,.15) 0%,rgba(6,8,11,.52) 50%,rgba(6,8,11,.88) 100%),
+        linear-gradient(135deg,rgba(20,50,100,.44) 0%,rgba(10,14,22,.38) 44%,rgba(10,14,22,.82) 100%);
+    }
+    .partners .shade{
+      background:
+        linear-gradient(180deg,rgba(6,8,11,.18) 0%,rgba(6,8,11,.55) 50%,rgba(6,8,11,.90) 100%),
+        linear-gradient(135deg,rgba(40,40,60,.40) 0%,rgba(10,10,14,.82) 100%);
+    }
+
+    .content{
+      position:relative;z-index:3;display:flex;flex-direction:column;justify-content:flex-end;
+      min-height:100%;padding:44px 36px 48px;
+    }
+    .kicker{
+      width:max-content;padding:8px 13px;border-radius:999px;margin-bottom:16px;
+      border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);
+      text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:800;
+    }
+    .content h2{
+      margin:0;font-size:clamp(1.8rem,2.8vw,3rem);line-height:1.02;
+      letter-spacing:-.03em;font-weight:900;text-wrap:balance;
+    }
+    .content p{
+      max-width:340px;margin:14px 0 0;color:rgba(255,255,255,.78);
+      font-size:1rem;line-height:1.72;
+    }
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .chips span{
+      padding:9px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.09);font-size:.86rem;font-weight:700;
+      color:rgba(255,255,255,.92);
+    }
+    .buttonish{
+      display:inline-flex;align-items:center;gap:10px;width:max-content;margin-top:22px;
+      padding:14px 18px;border-radius:16px;background:rgba(255,255,255,.97);color:#111318;
+      font-weight:800;font-size:.95rem;box-shadow:var(--shadow);transition:transform .25s ease;
+    }
+
+    /* hover effects */
+    .panel:hover .bg{transform:scale(1.1);filter:saturate(1.1) contrast(1.04)}
+    .panel:hover .buttonish{transform:translateX(4px)}
+
+    /* ── Responsive ── */
+    @media (max-width:960px){
+      body{padding:10px}
+      .page-shell{min-height:calc(100vh - 20px);border-radius:20px}
+      .top-bar{padding:12px 16px}
+      .top-logo{height:36px}
+      .landing-grid{grid-template-columns:1fr;min-height:auto}
+      .panel{min-height:46vh;border-right:none;border-bottom:1px solid var(--line)}
+      .panel:last-child{border-bottom:none}
+      .content{padding:30px 18px 34px;justify-content:flex-end}
+    }
+    @media (max-width:640px){
+      .content h2{font-size:1.7rem}
+      .content p{font-size:.95rem}
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <div class="top-bar">
+      <img src="assets/logo.png" alt="Grover Transport LLC" class="top-logo">
+      <a class="top-back" href="../index.html">← Grover Companies</a>
+    </div>
+
+    <section class="landing-grid">
+
+      <!-- Shippers -->
+      <a class="panel shippers" href="shippers.html" aria-label="Shippers — request a freight quote">
+        <div class="bg" style="background-image:url('assets/hero_tanker.jpg')"></div>
+        <div class="shade"></div>
+        <div class="content">
+          <div class="kicker">Shippers</div>
+          <h2>I need to move freight.</h2>
+          <p>
+            Request a quote for bulk freight coverage — spot loads, recurring lanes,
+            overflow capacity, and specialized bulk transportation.
+          </p>
+          <div class="buttonish">Request a Quote <span>→</span></div>
+        </div>
+      </a>
+
+      <!-- Carriers -->
+      <a class="panel carriers" href="carriers.html" aria-label="Carriers — join the carrier network">
+        <div class="bg" style="background-image:url('assets/night_belt.jpg')"></div>
+        <div class="shade"></div>
+        <div class="content">
+          <div class="kicker">Carriers</div>
+          <h2>I want to haul for Grover Transport.</h2>
+          <p>
+            Join our carrier network. We work with dependable bulk carriers
+            who value communication, professionalism, and long-term relationships.
+          </p>
+          <div class="buttonish">Join Carrier Network <span>→</span></div>
+        </div>
+      </a>
+
+      <!-- Partners -->
+      <a class="panel partners" href="login.html" aria-label="Partners — access the load board">
+        <div class="bg" style="background-image:url('assets/tanker_dual.jpg')"></div>
+        <div class="shade"></div>
+        <div class="content">
+          <div class="kicker">Partners</div>
+          <h2>I have load board access.</h2>
+          <p>
+            Sign in to view available loads posted by Grover Transport.
+            Access is limited to onboarded partner carriers.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+            <div class="buttonish">Partner Login <span>→</span></div>
+            <span class="buttonish" style="background:rgba(255,255,255,.15);color:#fff;box-shadow:none;border:1px solid rgba(255,255,255,.25)" onclick="event.preventDefault();event.stopPropagation();window.location.href='loads.html'">View Loads <span>→</span></span>
+          </div>
+        </div>
+      </a>
+
+    </section>
+  </main>
+</body>
+</html>

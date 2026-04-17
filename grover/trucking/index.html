@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grover Farm Trucking LLC</title>
+  <meta name="description" content="Grover Farm Trucking LLC — driver and employee website. Careers, training, equipment, and contact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    :root{
+      --shadow:0 24px 70px rgba(0,0,0,.38);
+      --line:rgba(255,255,255,.12);
+    }
+    html,body{margin:0;min-height:100%;font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at top,#101722 0%,#07090d 60%,#050608 100%);color:#fff}
+    body{padding:22px}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+
+    .page-shell{
+      min-height:calc(100vh - 44px);
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:rgba(255,255,255,.03);
+      backdrop-filter:blur(10px);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .top-bar{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:18px 22px;border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+    }
+    .brand-pill{
+      display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.10);
+      font-weight:800;font-size:.9rem;
+    }
+    .brand-badge{
+      width:34px;height:34px;border-radius:50%;
+      background:linear-gradient(145deg,#d51616,#8f1010);
+      display:grid;place-items:center;font-weight:900;font-size:.85rem;
+      box-shadow:0 6px 16px rgba(213,22,22,.3);
+    }
+    .top-right{display:flex;align-items:center;gap:20px}
+    .top-contact{color:rgba(255,255,255,.55);font-size:.84rem;font-weight:600}
+    .top-contact a{color:rgba(255,255,255,.7)}
+    .top-contact a:hover{color:#fff}
+    .top-back{color:rgba(255,255,255,.45);font-size:.84rem;font-weight:600;transition:color .2s}
+    .top-back:hover{color:rgba(255,255,255,.9)}
+
+    /* ── 2×2 grid ── */
+    .landing-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      grid-template-rows:1fr 1fr;
+      min-height:calc(100vh - 113px);
+    }
+    .panel{
+      position:relative;overflow:hidden;text-decoration:none;color:inherit;isolation:isolate;
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .panel:nth-child(2),.panel:nth-child(4){border-right:none}
+    .panel:nth-child(3),.panel:nth-child(4){border-bottom:none}
+    .bg{
+      position:absolute;inset:-3%;background-size:cover;background-position:center;
+      transform:scale(1.04);transition:transform .9s ease,filter .9s ease;
+    }
+    .shade{position:absolute;inset:0}
+
+    .careers-panel .shade{
+      background:
+        linear-gradient(180deg,rgba(6,8,11,.15) 0%,rgba(6,8,11,.55) 55%,rgba(6,8,11,.88) 100%),
+        linear-gradient(135deg,rgba(211,19,25,.38) 0%,rgba(10,10,12,.82) 100%);
+    }
+    .training-panel .shade{
+      background:
+        linear-gradient(180deg,rgba(6,8,11,.12) 0%,rgba(6,8,11,.50) 55%,rgba(6,8,11,.86) 100%),
+        linear-gradient(135deg,rgba(22,50,90,.40) 0%,rgba(10,14,22,.80) 100%);
+    }
+    .equipment-panel .shade{
+      background:
+        linear-gradient(180deg,rgba(6,8,11,.15) 0%,rgba(6,8,11,.52) 55%,rgba(6,8,11,.88) 100%),
+        linear-gradient(135deg,rgba(30,60,30,.30) 0%,rgba(10,12,10,.80) 100%);
+    }
+    .contact-panel .shade{
+      background:
+        linear-gradient(180deg,rgba(6,8,11,.18) 0%,rgba(6,8,11,.55) 55%,rgba(6,8,11,.90) 100%),
+        linear-gradient(135deg,rgba(50,35,20,.36) 0%,rgba(12,10,8,.82) 100%);
+    }
+
+    .content{
+      position:relative;z-index:3;display:flex;flex-direction:column;justify-content:flex-end;
+      min-height:100%;padding:36px 34px 40px;
+    }
+    .kicker{
+      width:max-content;padding:8px 12px;border-radius:999px;margin-bottom:14px;
+      border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);
+      text-transform:uppercase;letter-spacing:.18em;font-size:.7rem;font-weight:800;
+    }
+    .content h2{
+      margin:0;font-size:clamp(1.5rem,2.2vw,2.4rem);line-height:1.05;
+      letter-spacing:-.03em;font-weight:900;text-wrap:balance;
+    }
+    .content p{
+      max-width:380px;margin:12px 0 0;color:rgba(255,255,255,.75);
+      font-size:.96rem;line-height:1.68;
+    }
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .chips span{
+      padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.09);font-size:.82rem;font-weight:700;
+      color:rgba(255,255,255,.9);
+    }
+    .buttonish{
+      display:inline-flex;align-items:center;gap:9px;width:max-content;margin-top:20px;
+      padding:13px 16px;border-radius:15px;background:rgba(255,255,255,.97);color:#111318;
+      font-weight:800;font-size:.92rem;box-shadow:var(--shadow);transition:transform .25s ease;
+    }
+
+    /* hover */
+    .panel:hover .bg{transform:scale(1.1);filter:saturate(1.1) contrast(1.04)}
+    .panel:hover .buttonish{transform:translateX(4px)}
+
+    /* ── Responsive ── */
+    @media (max-width:960px){
+      body{padding:10px}
+      .page-shell{min-height:calc(100vh - 20px);border-radius:20px}
+      .top-bar{padding:12px 16px}
+      .top-contact{display:none}
+    }
+    @media (max-width:700px){
+      .landing-grid{grid-template-columns:1fr;grid-template-rows:repeat(4,auto)}
+      .panel{min-height:44vh;border-right:none !important;border-bottom:1px solid var(--line) !important}
+      .panel:last-child{border-bottom:none !important}
+      .content{padding:26px 16px 30px}
+    }
+    @media (max-width:480px){
+      .content h2{font-size:1.5rem}
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <div class="top-bar">
+      <div class="brand-pill">
+        <div class="brand-badge">GF</div>
+        Grover Farm Trucking LLC
+      </div>
+      <a class="top-back" href="../index.html">← Grover Companies</a>
+    </div>
+
+    <section class="landing-grid">
+
+      <!-- Careers -->
+      <a class="panel careers-panel" href="careers.html" aria-label="Careers — apply to drive for Grover Farm Trucking">
+        <div class="bg" style="background-image:url('assets/tanker_road.jpg')"></div>
+        <div class="shade"></div>
+        <div class="content">
+          <div class="kicker">Careers</div>
+          <h2>I want to drive or work here.</h2>
+          <p>
+            View current opportunities, see what we look for in drivers,
+            and send an application introduction.
+          </p>
+          <div class="buttonish">View Careers <span>→</span></div>
+        </div>
+      </a>
+
+      <!-- Training & Culture -->
+      <a class="panel training-panel" href="training.html" aria-label="Training & Culture">
+        <div class="bg" style="background-image:url('assets/Tanker.jpeg')"></div>
+        <div class="shade"></div>
+        <div class="content">
+          <div class="kicker">Training & Culture</div>
+          <h2>I want to learn the standards.</h2>
+          <p>
+            How we train drivers, what we expect on the job, and the culture
+            we are building at Grover Farm Trucking.
+          </p>
+          <div class="buttonish">Training & Culture <span>→</span></div>
+        </div>
+      </a>
+
+      <!-- Equipment -->
+      <a class="panel equipment-panel" href="equipment.html" aria-label="Fleet & Equipment">
+        <div class="bg" style="background-image:url('assets/Belt.JPG')"></div>
+        <div class="shade"></div>
+        <div class="content">
+          <div class="kicker">Fleet & Equipment</div>
+          <h2>I want to see the equipment.</h2>
+          <p>
+            Tankers, belt trailers, hoppers, and vans — the fleet we run and
+            the maintenance standards we hold.
+          </p>
+          <div class="buttonish">View Equipment <span>→</span></div>
+        </div>
+      </a>
+
+      <!-- Contact -->
+      <a class="panel contact-panel" href="contact.html" aria-label="Contact Grover Farm Trucking">
+        <div class="bg" style="background-image:url('assets/hopper.JPG')"></div>
+        <div class="shade"></div>
+        <div class="content">
+          <div class="kicker">Contact</div>
+          <h2>I have a question or want to reach out.</h2>
+          <p>
+            Call, email, or send a message. We are based in Amboy, Minnesota
+            and respond promptly.
+          </p>
+          <div class="buttonish">Get in Touch <span>→</span></div>
+        </div>
+      </a>
+
+    </section>
+  </main>
+</body>
+</html>
