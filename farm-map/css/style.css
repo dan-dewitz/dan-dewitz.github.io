@@ -73,3 +73,62 @@ html, body {
 .leaflet-control-layers-list label {
   margin-bottom: 4px;
 }
+
+/* Legend */
+.map-legend {
+  background: #fff;
+  padding: 8px 12px 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #1f2937;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+}
+
+.map-legend h4 {
+  margin: 8px 0 3px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.map-legend h4:first-child { margin-top: 0; }
+
+.map-legend .lg-sub {
+  margin: 4px 0 2px;
+  color: #6b7280;
+}
+
+.map-legend .lg-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 2px 0;
+  white-space: nowrap;
+}
+
+.map-legend .lg-line {
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+  flex: none;
+}
+
+.map-legend .lg-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  flex: none;
+}
+
+.map-legend .lg-outline {
+  width: 18px;
+  height: 10px;
+  border: 2px dashed #f97316;
+  flex: none;
+}

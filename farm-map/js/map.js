@@ -380,4 +380,32 @@
     'MA Farm Directory':  maFarmLayer
   }, { collapsed: false }).addTo(map);
 
+  // ── Legend ────────────────────────────────────────────────────────────────────
+  // NY farm types present in ny_farms.geojson, most common first
+  const NY_TYPES_IN_DATA = [
+    'Livestock Farm', 'Produce Farm', 'Dairy Farm', 'Orchard', 'Organic Farm',
+    'Vineyard', 'Farm Beverage', 'Flower Farm', 'Poultry Farm', 'Apiary',
+    'Urban Farm', 'Aquaculture'
+  ];
+  const legend = L.control({ position: 'bottomleft' });
+  legend.onAdd = function () {
+    const div = L.DomUtil.create('div', 'map-legend');
+    const line = c => `<span class="lg-line" style="background:${c}"></span>`;
+    const dot  = c => `<span class="lg-dot" style="background:${c}"></span>`;
+    div.innerHTML =
+      '<h4>Rail lines</h4>' +
+      `<div class="lg-row">${line(METRO_COLOR)}Metro-North</div>` +
+      `<div class="lg-row">${line(LIRR_COLOR)}LIRR</div>` +
+      '<h4>NYC neighborhoods</h4>' +
+      '<div class="lg-row"><span class="lg-outline"></span>Food insecure (high bodega:grocery ratio)</div>' +
+      '<h4>Farms</h4>' +
+      `<div class="lg-row">${dot('#16A34A')}NJ, CT, PA, MA farms</div>` +
+      '<div class="lg-sub">NY farms by type</div>' +
+      NY_TYPES_IN_DATA.map(t => `<div class="lg-row">${dot(nyFarmColor(t))}${t}</div>`).join('');
+    L.DomEvent.disableScrollPropagation(div);
+    L.DomEvent.disableClickPropagation(div);
+    return div;
+  };
+  legend.addTo(map);
+
 })();
