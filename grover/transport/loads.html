@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Available Loads | Grover Transport Partner Board</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="loads-page">
+
+  <header class="loads-topbar">
+    <div class="container">
+      <a href="index.html"><img src="assets/logo.png" alt="Grover Transport logo" class="brand-logo" /></a>
+      <div class="loads-topbar-right">
+        <span id="user-email"></span>
+        <button class="btn-outline" id="signout-btn" style="cursor:pointer">Sign Out</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="loads-header">
+      <h1>Available Loads</h1>
+      <p>Loads posted by Grover Transport. Contact us to confirm and book.</p>
+    </div>
+
+    <div class="loads-filters">
+      <select id="filter-equipment">
+        <option value="">All Equipment Types</option>
+        <option value="Tanker">Tanker</option>
+        <option value="Belt Trailer">Belt Trailer</option>
+        <option value="Hopper">Hopper</option>
+        <option value="Dry Van">Dry Van</option>
+        <option value="Flatbed">Flatbed</option>
+      </select>
+      <select id="filter-status">
+        <option value="available">Available</option>
+        <option value="">All Statuses</option>
+      </select>
+    </div>
+
+    <div class="loads-table-wrap">
+      <div class="loads-spinner" id="loads-spinner">Loading loads…</div>
+      <table class="loads-table" id="loads-table" style="display:none">
+        <thead>
+          <tr>
+            <th>Load #</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Equipment</th>
+            <th>Commodity</th>
+            <th>Date Available</th>
+            <th>Weight</th>
+            <th>Rate</th>
+            <th>Status</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody id="loads-body"></tbody>
+      </table>
+      <div class="loads-empty" id="loads-empty" style="display:none">
+        <strong>No loads found</strong>
+        Check back soon or contact us at <a href="mailto:rob@groverfarm.com">rob@groverfarm.com</a>
+      </div>
+    </div>
+
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:48px">
+      To book a load or ask questions, contact <a href="mailto:rob@groverfarm.com" style="color:var(--brand)">rob@groverfarm.com</a>
+      or call <a href="tel:5077208120" style="color:var(--brand)">507-720-8120</a>.
+    </p>
+  </div>
+
+  <!-- Supabase JS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script>
+    // ── Replace these two values after completing Supabase setup (see SETUP.md) ──
+    const SUPABASE_URL  = 'YOUR_SUPABASE_URL';
+    const SUPABASE_ANON = 'YOUR_SUPABASE_ANON_KEY';
+    // ─────────────────────────────────────────────────────────────────────────────
+
+    const isConfigured = SUPABASE_URL !== 'YOUR_SUPABASE_URL';
+
+    // ── PREVIEW MODE (Supabase not yet configured) ────────────────────────────
+    if (!isConfigured) {
+      // Show banner
+      const banner = document.createElement('div');
+      banner.style.cssText = 'background:#b45309;color:#fff;text-align:center;padding:10px 16px;font-size:.88rem;font-weight:700;';
+      banner.textContent = 'PREVIEW MODE — Sample data only. Connect Supabase to enable live loads and partner login.';
+      document.body.insertBefore(banner, document.body.firstChild);
+
+      // Hide sign-out button, show placeholder email
+      document.getElementById('user-email').textContent = 'preview@example.com';
+      document.getElementById('signout-btn').style.display = 'none';
+
+      // Filters still work client-side
+      document.getElementById('filter-equipment').addEventListener('change', renderPreview);
+      document.getElementById('filter-status').addEventListener('change', renderPreview);
+
+      const SAMPLE = [
+        { load_number:'GT-001', origin:'Mankato, MN',    destination:'Sioux Falls, SD', equipment_type:'Tanker',      commodity:'Liquid Fertilizer', date_available:'2026-04-22', weight:'45,000 lbs', rate:'Contact us',  status:'available', notes:'Food-grade tank required' },
+        { load_number:'GT-002', origin:'Amboy, MN',      destination:'Des Moines, IA',  equipment_type:'Belt Trailer', commodity:'Corn',              date_available:'2026-04-24', weight:'48,000 lbs', rate:'Contact us',  status:'available', notes:'Belt unload at destination' },
+        { load_number:'GT-003', origin:'Rochester, MN',  destination:'Fargo, ND',       equipment_type:'Hopper',      commodity:'Soybeans',          date_available:'2026-04-25', weight:'47,500 lbs', rate:'Contact us',  status:'pending',   notes:'' },
+        { load_number:'GT-004', origin:'Albert Lea, MN', destination:'Omaha, NE',       equipment_type:'Dry Van',     commodity:'Bagged Feed',       date_available:'2026-04-28', weight:'42,000 lbs', rate:'Contact us',  status:'available', notes:'Palletized — standard dock' },
+      ];
+
+      function renderPreview() {
+        const eqFilter = document.getElementById('filter-equipment').value;
+        const stFilter = document.getElementById('filter-status').value;
+        let rows = SAMPLE;
+        if (eqFilter) rows = rows.filter(r => r.equipment_type === eqFilter);
+        if (stFilter) rows = rows.filter(r => r.status === stFilter);
+        renderRows(rows);
+      }
+
+      document.getElementById('loads-spinner').style.display = 'none';
+      renderPreview();
+
+    } else {
+      // ── LIVE MODE ─────────────────────────────────────────────────────────────
+      const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+      let currentSession = null;
+      sb.auth.getSession().then(({ data: { session } }) => {
+        if (!session) {
+          window.location.replace('login.html');
+          return;
+        }
+        currentSession = session;
+        document.getElementById('user-email').textContent = session.user.email;
+        loadLoads();
+      });
+
+      document.getElementById('signout-btn').addEventListener('click', async () => {
+        await sb.auth.signOut();
+        window.location.replace('login.html');
+      });
+
+      document.getElementById('filter-equipment').addEventListener('change', loadLoads);
+      document.getElementById('filter-status').addEventListener('change', loadLoads);
+
+      async function loadLoads() {
+        const spinner  = document.getElementById('loads-spinner');
+        const table    = document.getElementById('loads-table');
+        const empty    = document.getElementById('loads-empty');
+        const eqFilter = document.getElementById('filter-equipment').value;
+        const stFilter = document.getElementById('filter-status').value;
+
+        spinner.style.display = 'block';
+        table.style.display   = 'none';
+        empty.style.display   = 'none';
+
+        let query = sb.from('loads').select('*').order('date_available', { ascending: true });
+        if (stFilter) query = query.eq('status', stFilter);
+        if (eqFilter) query = query.eq('equipment_type', eqFilter);
+
+        const { data, error } = await query;
+
+        spinner.style.display = 'none';
+
+        if (error || !data || data.length === 0) {
+          empty.style.display = 'block';
+          return;
+        }
+
+        renderRows(data);
+      }
+    }
+
+    // ── Shared render ─────────────────────────────────────────────────────────
+    function renderRows(data) {
+      const table = document.getElementById('loads-table');
+      const empty = document.getElementById('loads-empty');
+      const tbody = document.getElementById('loads-body');
+
+      if (!data || data.length === 0) {
+        table.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+
+      tbody.innerHTML = data.map(row => `
+        <tr>
+          <td><strong>${esc(row.load_number || '—')}</strong></td>
+          <td>${esc(row.origin)}</td>
+          <td>${esc(row.destination)}</td>
+          <td>${esc(row.equipment_type)}</td>
+          <td>${esc(row.commodity || '—')}</td>
+          <td>${formatDate(row.date_available)}</td>
+          <td>${esc(row.weight || '—')}</td>
+          <td>${esc(row.rate || 'Contact us')}</td>
+          <td><span class="badge badge-${esc(row.status || 'available')}">${esc(row.status || 'available')}</span></td>
+          <td style="max-width:200px;font-size:.88rem">${esc(row.notes || '—')}</td>
+        </tr>
+      `).join('');
+
+      table.style.display = 'table';
+      empty.style.display = 'none';
+    }
+
+    function esc(str) {
+      return String(str)
+        .replace(/&/g,'&amp;')
+        .replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;');
+    }
+
+    function formatDate(d) {
+      if (!d) return '—';
+      const dt = new Date(d + 'T00:00:00');
+      return dt.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+    }
+  </script>
+</body>
+</html>

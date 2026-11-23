@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partner Login | Grover Transport</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <img src="assets/logo.png" alt="Grover Transport logo" class="brand-logo" />
+    <h2>Partner Login</h2>
+    <p>Access the available loads board for onboarded partners.</p>
+
+    <div class="auth-error" id="auth-error"></div>
+
+    <form class="site-form" id="login-form" novalidate>
+      <label>
+        Email Address
+        <input type="email" id="login-email" autocomplete="email" required placeholder="you@company.com" />
+      </label>
+      <label>
+        Password
+        <input type="password" id="login-password" autocomplete="current-password" required placeholder="Password" />
+      </label>
+      <button type="submit" class="btn btn-primary" id="login-btn">Sign In</button>
+    </form>
+
+    <p class="auth-back">
+      Not yet set up? <a href="mailto:rob@groverfarm.com">Contact us</a> to get access.
+      <br><br>
+      <a href="index.html">← Back to Grover Transport</a>
+    </p>
+  </div>
+
+  <!-- Supabase JS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script>
+    // ── Replace these two values after completing Supabase setup (see SETUP.md) ──
+    const SUPABASE_URL  = 'YOUR_SUPABASE_URL';
+    const SUPABASE_ANON = 'YOUR_SUPABASE_ANON_KEY';
+    // ─────────────────────────────────────────────────────────────────────────────
+
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+    // If already signed in, skip to the loads board
+    sb.auth.getSession().then(({ data: { session } }) => {
+      if (session) window.location.replace('loads.html');
+    });
+
+    const form    = document.getElementById('login-form');
+    const errBox  = document.getElementById('auth-error');
+    const btn     = document.getElementById('login-btn');
+
+    function showError(msg) {
+      errBox.textContent = msg;
+      errBox.style.display = 'block';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errBox.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Signing in…';
+
+      const email    = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+
+      const { error } = await sb.auth.signInWithPassword({ email, password });
+
+      if (error) {
+        showError(error.message || 'Sign-in failed. Check your email and password.');
+        btn.disabled = false;
+        btn.textContent = 'Sign In';
+      } else {
+        window.location.replace('loads.html');
+      }
+    });
+  </script>
+</body>
+</html>
