@@ -97,6 +97,10 @@
     .project figcaption { margin-top: 0.5rem; font-size: 0.875rem; color: var(--muted); }
     .project figure a { cursor: zoom-in; }
     .project figure a:not([data-lightbox]) { cursor: pointer; }
+    /* Phones: images are not tappable to full screen */
+    @media (max-width: 51.99rem) {
+      .project figure a[data-lightbox] { pointer-events: none; cursor: default; }
+    }
 
     /* Full-screen image pop-out */
     .lightbox {
@@ -266,6 +270,8 @@
       document.querySelectorAll('a[data-lightbox]').forEach(function (a) {
         a.addEventListener('click', function (e) {
           e.preventDefault();
+          // No full-screen view on phones (matches the 52rem layout breakpoint)
+          if (!window.matchMedia('(min-width: 52rem)').matches) return;
           var img = a.querySelector('img');
           big.src = a.href;
           big.alt = img ? img.alt : '';
