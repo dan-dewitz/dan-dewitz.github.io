@@ -15,10 +15,10 @@
     :root {
       --paper: #f3f5f2;
       --ink: #17263a;
+      --link: #1f4e9c;    /* deep cobalt: links, focus */
       --muted: #56657a;
       --rule: #cfd6d0;
-      --lane: #2f7d55;   /* bike-lane green: links, focus */
-      --mustard: #d9a41e; /* sandwich mustard: project markers */
+      --dot: #4a8bd0;     /* sky blue: project markers */
       --measure: 42rem;
     }
     * { box-sizing: border-box; }
@@ -31,9 +31,9 @@
       font-size: 1.0625rem;
       line-height: 1.6;
     }
-    a { color: var(--lane); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+    a { color: var(--link); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
     a:hover { text-decoration-thickness: 2px; }
-    :focus-visible { outline: 3px solid var(--lane); outline-offset: 3px; border-radius: 2px; }
+    :focus-visible { outline: 3px solid var(--link); outline-offset: 3px; border-radius: 2px; }
 
     .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
 
@@ -73,7 +73,7 @@
       width: 0.6em; height: 0.6em;
       margin-right: 0.5em;
       border-radius: 50%;
-      background: var(--mustard);
+      background: var(--dot);
       vertical-align: 0.05em;
     }
     .project h2 {
@@ -88,6 +88,7 @@
     .project h3 { margin: 1.75rem 0 0.5rem; font-size: 1.0625rem; font-weight: 700; }
     .project ul { list-style: disc; margin: 0 0 1rem; padding-left: 1.25rem; max-width: var(--measure); }
     .project li + li { margin-top: 0.35rem; }
+    .project ul li::marker { color: #000; }
     .project .pending { color: var(--muted); font-style: italic; }
     .links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 1.25rem; font-weight: 500; }
 
