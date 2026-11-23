@@ -1,0 +1,220 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Main Line",
+        "stations": "Penn Station → Ronkonkoma"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-73.9935, 40.7506],
+          [-73.9037, 40.7449],
+          [-73.8479, 40.7192],
+          [-73.7992, 40.7020],
+          [-73.7508, 40.7209],
+          [-73.7024, 40.7209],
+          [-73.6388, 40.7465],
+          [-73.5218, 40.7682],
+          [-73.4449, 40.7320],
+          [-73.3560, 40.7618],
+          [-73.2026, 40.7830],
+          [-73.1227, 40.8134]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Greenport Branch",
+        "stations": "Ronkonkoma → Greenport"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-73.1227, 40.8134],
+          [-72.9265, 40.9015],
+          [-72.7884, 40.9171],
+          [-72.6618, 40.9176],
+          [-72.5014, 40.9596],
+          [-72.3593, 41.1004]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Port Washington Branch",
+        "stations": "Penn Station → Port Washington"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-73.9935, 40.7506],
+          [-73.9037, 40.7449],
+          [-73.8479, 40.7192],
+          [-73.7669, 40.7735],
+          [-73.7420, 40.7900],
+          [-73.7271, 40.8079],
+          [-73.7070, 40.8194],
+          [-73.6985, 40.8284]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hempstead Branch",
+        "stations": "Penn Station → Hempstead"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-73.9935, 40.7506],
+          [-73.9037, 40.7449],
+          [-73.8479, 40.7192],
+          [-73.7992, 40.7020],
+          [-73.7508, 40.7209],
+          [-73.7024, 40.7209],
+          [-73.6388, 40.7465],
+          [-73.6187, 40.7062]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Long Beach Branch",
+        "stations": "Jamaica → Long Beach"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-73.7992, 40.7020],
+          [-73.7500, 40.6700],
+          [-73.7085, 40.6567],
+          [-73.6584, 40.5884]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "West Hempstead Branch",
+        "stations": "Valley Stream → West Hempstead"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-73.7085, 40.6567],
+          [-73.6765, 40.6720],
+          [-73.6494, 40.6887]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Far Rockaway Branch",
+        "stations": "Jamaica → Far Rockaway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-73.7992, 40.7020],
+          [-73.7700, 40.6670],
+          [-73.7549, 40.6032]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Babylon Branch",
+        "stations": "Penn Station → Babylon"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-73.9935, 40.7506],
+          [-73.9037, 40.7449],
+          [-73.8479, 40.7192],
+          [-73.7992, 40.7020],
+          [-73.7500, 40.6700],
+          [-73.7085, 40.6567],
+          [-73.6584, 40.6561],
+          [-73.5960, 40.6570],
+          [-73.5172, 40.6598],
+          [-73.4290, 40.6621],
+          [-73.3700, 40.6621],
+          [-73.3271, 40.6982]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Montauk Branch",
+        "stations": "Babylon → Montauk"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-73.3271, 40.6982],
+          [-73.2463, 40.7231],
+          [-73.1893, 40.7278],
+          [-73.1311, 40.7344],
+          [-73.0833, 40.7344],
+          [-73.0148, 40.7624],
+          [-72.9356, 40.7535],
+          [-72.8447, 40.8046],
+          [-72.7036, 40.8237],
+          [-72.5167, 40.8696],
+          [-72.3892, 40.8844],
+          [-72.3122, 40.9337],
+          [-72.1840, 40.9634],
+          [-72.1284, 40.9813],
+          [-71.9549, 41.0401]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Port Jefferson Branch",
+        "stations": "Jamaica → Port Jefferson"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-73.7992, 40.7020],
+          [-73.7024, 40.7209],
+          [-73.6388, 40.7465],
+          [-73.5218, 40.7682],
+          [-73.3950, 40.7715],
+          [-73.2937, 40.8022],
+          [-73.1925, 40.8454],
+          [-73.1020, 40.8560],
+          [-73.0535, 40.9451]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Oyster Bay Branch",
+        "stations": "Hicksville → Oyster Bay"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-73.5218, 40.7682],
+          [-73.5080, 40.8120],
+          [-73.5329, 40.8646]
+        ]
+      }
+    }
+  ]
+}
