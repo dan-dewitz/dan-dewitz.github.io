@@ -91,6 +91,34 @@
     .project ul li::marker { color: #000; }
     .project .pending { color: var(--muted); font-style: italic; }
     .links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 1.25rem; font-weight: 500; }
+    .project figure { margin: 1.25rem 0 0; max-width: 24rem; }
+    .project figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+    .project figcaption { margin-top: 0.5rem; font-size: 0.875rem; color: var(--muted); }
+    .project figure a { cursor: zoom-in; }
+
+    /* Full-screen image pop-out */
+    .lightbox {
+      width: 100vw; height: 100vh; max-width: none; max-height: none;
+      margin: 0; padding: 1rem; border: 0;
+      background: transparent;
+      display: none; align-items: center; justify-content: center;
+      cursor: zoom-out;
+    }
+    .lightbox[open] { display: flex; }
+    .lightbox::backdrop { background: rgba(10, 18, 30, 0.88); }
+    .lightbox img {
+      max-width: 100%; max-height: 100%; width: auto; height: auto;
+      object-fit: contain; background: #fff;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    }
+    .lightbox-close {
+      position: fixed; top: 0.75rem; right: 1rem;
+      width: 2.75rem; height: 2.75rem;
+      border: 0; border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15); color: #fff;
+      font-size: 2rem; line-height: 1; cursor: pointer;
+    }
+    .lightbox-close:hover, .lightbox-close:focus-visible { background: rgba(255, 255, 255, 0.3); }
 
 
     /* Footer */
@@ -112,6 +140,12 @@
           <div class="meta">
             <span class="where">IAFFE Annual Conference</span>
             Cali, Colombia, July 2026
+            <figure>
+              <a href="assets/citi-bike-study-groups-map.jpg" data-lightbox target="_blank" rel="noopener noreferrer">
+                <img src="assets/citi-bike-study-groups-map.jpg" width="1012" height="1400" loading="lazy" alt="Map of New York City Citi Bike docks by study group: test corridor docks in red across central Brooklyn, Hudson River Greenway docks in teal along west Manhattan, and control docks in grey elsewhere, with subway lines overlaid.">
+              </a>
+              <figcaption>Citi Bike docks by study group, with NYC subway lines. Click to enlarge.</figcaption>
+            </figure>
           </div>
           <div>
             <h2>Citi biking and time savings: the cost of Brooklyn's missing bike lanes</h2>
@@ -191,5 +225,29 @@
       </ul>
     </footer>
   </div>
+
+  <dialog class="lightbox" aria-label="Enlarged image">
+    <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+    <img alt="">
+  </dialog>
+  <script>
+    (function () {
+      var box = document.querySelector('.lightbox');
+      if (!box || typeof box.showModal !== 'function') return;
+      var big = box.querySelector('img');
+      document.querySelectorAll('a[data-lightbox]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          var img = a.querySelector('img');
+          big.src = a.href;
+          big.alt = img ? img.alt : '';
+          box.showModal();
+        });
+      });
+      // Close on any click (image, backdrop or the X button)
+      box.addEventListener('click', function () { box.close(); });
+      box.addEventListener('close', function () { big.removeAttribute('src'); });
+    })();
+  </script>
 </body>
 </html>
